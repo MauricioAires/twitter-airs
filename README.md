@@ -43,7 +43,7 @@ Ficou legal, resolvi compartilhar com vocês.
 
 Segue abaixo o link do deploy na Vercel:
 
-Vercel: [https://lnkd.in/dgqai2w](https://lnkd.in/dgqai2w)
+Vercel: [https://twitter-airs.vercel.app/](https://twitter-airs.vercel.app/)
 
 ## 🔖 Layout
 
@@ -57,7 +57,7 @@ Layout do projeto
 
 - Clone o repositório
 - Instale as dependências com `yarn`
-- Inicie o servidor com `yarn dev`
+- Inicie o servidor com `yarn start`
 
 Agora você pode acessar [`localhost:3000`](http://localhost:3000) do seu navegador.
 
