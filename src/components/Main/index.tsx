@@ -2,6 +2,8 @@ import React from 'react';
 
 import ProfilePage from '../ProfilePage';
 
+import { database } from '../../utils/database';
+
 import {
   Container,
   Header,
@@ -30,7 +32,7 @@ const Main: React.FC<Props> = ({ toggleTheme }) => {
           </button>
 
           <ProfileInfo>
-            <strong>Mauricio Aires de Freitas</strong>
+            <strong>{database.profile.name}</strong>
             <span>123 Tweets</span>
           </ProfileInfo>
         </div>

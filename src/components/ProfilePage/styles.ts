@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { Cake, LocationOn, Person } from '../../styles/Icons';
+import { Cake, LocationOn } from '../../styles/Icons';
 import Button from '../Button';
 
 export const Container = styled.div`
@@ -27,7 +27,7 @@ export const Banner = styled.div`
   position: relative;
 `;
 
-export const Avatar = styled.div`
+export const Avatar = styled.img`
   width: max(45px, min(135px, 22vw));
   height: max(45px, min(135px, 22vw));
 
@@ -42,15 +42,6 @@ export const Avatar = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-export const ProfileIcon = styled(Person)`
-  flex-shrink: 0;
-
-  width: 80%;
-  height: 80%;
-
-  fill: var(--profile);
 `;
 
 export const ProfileData = styled.div`

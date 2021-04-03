@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { database } from '../../utils/database';
+
 import {
   Container,
   Topside,
@@ -50,13 +52,14 @@ const MenuBar: React.FC = () => {
       </Topside>
 
       <Bottomside>
-        <Avatar>
-          <ProfileIcon />
-        </Avatar>
-
+        <Avatar
+          alt={database.profile.name}
+          title={database.profile.name}
+          src={database.profile.avatar}
+        />
         <ProfileData>
-          <strong>Mauricio Aires</strong>
-          <span>@mauricio_airs</span>
+          <strong>{database.profile.name}</strong>
+          <span>{database.profile.nickname}</span>
         </ProfileData>
 
         <ExitIcon />

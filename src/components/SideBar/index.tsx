@@ -4,6 +4,7 @@ import StickyBox from 'react-sticky-box';
 import List from '../List';
 import FollowSuggestion from '../FollowSuggestion';
 import News from '../News';
+import { database } from '../../utils/database';
 
 import {
   Container,
@@ -14,6 +15,26 @@ import {
 } from './styles';
 
 const SideBar: React.FC = () => {
+  const suggestions = database.suggestions.map((suggestion) => (
+    <FollowSuggestion
+      avatar={suggestion.avatar}
+      name={suggestion.name}
+      nickname={suggestion.nickname}
+    />
+  ));
+
+  const trending_a = database.trending_a.map((trending) => (
+    <News title={trending.title} description={trending.description} />
+  ));
+
+  const trending_b = database.trending_b.map((trending) => (
+    <News title={trending.title} description={trending.description} />
+  ));
+
+  const trending_c = database.trending_c.map((trending) => (
+    <News title={trending.title} description={trending.description} />
+  ));
+
   return (
     <Container>
       <SearchWrapper>
@@ -22,32 +43,10 @@ const SideBar: React.FC = () => {
       </SearchWrapper>
       <StickyBox>
         <Body>
-          <List
-            title="Talvez você curta"
-            elements={[
-              <FollowSuggestion
-                name="Luiz Batanero"
-                nickname="@luizbatanero"
-              />,
-              <FollowSuggestion name="Luke Morales" nickname="@lukemorales" />,
-              <FollowSuggestion
-                name="Camila Magalhães"
-                nickname="@camilaamg"
-              />,
-            ]}
-          />
-          <List
-            title="Talvez você curta"
-            elements={[<News />, <News />, <News />]}
-          />
-          <List
-            title="Talvez você curta"
-            elements={[<News />, <News />, <News />]}
-          />
-          <List
-            title="Talvez você curta"
-            elements={[<News />, <News />, <News />]}
-          />
+          <List title="Quem seguir" elements={suggestions} />
+          <List title="O que está acontecendo" elements={trending_a} />
+          <List title="O que está acontecendo" elements={trending_b} />
+          <List title="O que está acontecendo" elements={trending_c} />
         </Body>
       </StickyBox>
     </Container>

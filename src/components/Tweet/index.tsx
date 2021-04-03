@@ -19,7 +19,21 @@ import {
   LikeIcon,
 } from './styles';
 
-const Tweet: React.FC = () => {
+interface Props {
+  name: string;
+  nickname: string;
+  date: string;
+  description: string;
+  image: string;
+}
+
+const Tweet: React.FC<Props> = ({
+  name,
+  nickname,
+  date,
+  description,
+  image,
+}) => {
   return (
     <Container>
       <Retweeted>
@@ -33,14 +47,14 @@ const Tweet: React.FC = () => {
         </Avatar>
         <Content>
           <Header>
-            <strong>Mauricio</strong>
-            <span>@mauricio_airs</span>
+            <strong>{name}</strong>
+            <span>{nickname}</span>
             <Dot />
-            <time>27 de jun</time>
+            <time>{date}</time>
           </Header>
-          <Description>Foguete não tem ré 🚀</Description>
+          <Description>{description}</Description>
 
-          <ImageContent />
+          <ImageContent src={image} alt={description} title={name} />
 
           <Icons>
             <Status>

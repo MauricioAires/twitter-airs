@@ -2,11 +2,12 @@ import React from 'react';
 
 import Feed from '../Feed';
 
+import { database } from '../../utils/database';
+
 import {
   Container,
   Banner,
   Avatar,
-  ProfileIcon,
   ProfileData,
   LocationIcon,
   CakeIcon,
@@ -18,14 +19,16 @@ const ProfilePage: React.FC = () => {
   return (
     <Container>
       <Banner>
-        <Avatar>
-          <ProfileIcon />
-        </Avatar>
+        <Avatar
+          src={database.profile.avatar}
+          title={database.profile.name}
+          alt={database.profile.name}
+        />
       </Banner>
       <ProfileData>
         <EditButton outline>Editar perfil</EditButton>
-        <h1>Mauricio Aires</h1>
-        <h2>@maurio_airs</h2>
+        <h1>{database.profile.name}</h1>
+        <h2>{database.profile.nickname}</h2>
 
         <p>
           Developer at <a href="https://brisanet.com.br">@Brisanet</a>

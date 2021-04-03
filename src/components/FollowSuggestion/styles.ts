@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import { Person } from '../../styles/Icons';
-
 import Button from '../Button';
 
 export const Container = styled.div`
@@ -10,13 +8,15 @@ export const Container = styled.div`
   flex-direction: row;
   justify-content: space-between;
 
+  margin-top: 10px;
+
   > div {
     display: flex;
     align-items: center;
   }
 `;
 
-export const Avatar = styled.div`
+export const Avatar = styled.img`
   width: 49px;
   height: 49px;
   background: var(--profile-background);
@@ -27,15 +27,6 @@ export const Avatar = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-export const ProfileIcon = styled(Person)`
-  flex-shrink: 0;
-
-  width: 35px;
-  height: 35px;
-
-  fill: var(--profile);
 `;
 
 export const Info = styled.div`
